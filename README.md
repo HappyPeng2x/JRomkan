@@ -14,7 +14,7 @@ The dependencies are as follows:
 - CMake
 - Python 3.x
 - python-romkan
-- JDK 7.x or newer
+- JDK 7 or newer or Android API 14 or newer
 
 JRomkan can be built with the following commands:
 

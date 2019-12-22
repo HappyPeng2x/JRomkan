@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Romkan {
     private static class LengthComparator implements Comparator<String> {
@@ -48,33 +49,50 @@ public class Romkan {
 
     private LengthComparator length_comparator;
     
+    private static String joinString(final String a_separator, final List<String> a_elements) {
+        StringBuilder buf = new StringBuilder();
+        boolean first = true;
+
+        for (String e : a_elements) {
+            if (!first) {
+                buf.append(a_separator);
+            }
+
+            buf.append(e);
+
+            first = false;
+        }
+
+        return buf.toString();
+    }
+
     public Romkan() {
         length_comparator = new LengthComparator();
         romkan_data = new RomkanData();
         
         final ArrayList<String> romkan_keys = new ArrayList<>(romkan_data.get_romkan().keySet());
         Collections.sort(romkan_keys, length_comparator);
-        rompat = Pattern.compile(String.join("|", romkan_keys));
+        rompat = Pattern.compile(joinString("|", romkan_keys));
 
         final ArrayList<String> romkan_h_keys = new ArrayList<>(romkan_data.get_romkan_h().keySet());
         Collections.sort(romkan_h_keys, length_comparator);
-        rompat_h = Pattern.compile(String.join("|", romkan_h_keys));
+        rompat_h = Pattern.compile(joinString("|", romkan_h_keys));
 
         final ArrayList<String> kanpat_keys = new ArrayList<>(romkan_data.get_kanrom().keySet());
         Collections.sort(kanpat_keys, length_comparator);
-        kanpat = Pattern.compile(String.join("|", kanpat_keys));
+        kanpat = Pattern.compile(joinString("|", kanpat_keys));
 
         final ArrayList<String> kanpat_h_keys = new ArrayList<>(romkan_data.get_kanrom_h().keySet());
         Collections.sort(kanpat_h_keys, length_comparator);
-        kanpat_h = Pattern.compile(String.join("|", kanpat_h_keys));
+        kanpat_h = Pattern.compile(joinString("|", kanpat_h_keys));
 
         final ArrayList<String> kunpat_keys = new ArrayList<>(romkan_data.get_to_hepburn().keySet());
         Collections.sort(kunpat_keys, length_comparator);
-        kunpat = Pattern.compile(String.join("|", kunpat_keys));
+        kunpat = Pattern.compile(joinString("|", kunpat_keys));
 
         final ArrayList<String> heppat_keys = new ArrayList<>(romkan_data.get_to_kunrei().keySet());
         Collections.sort(heppat_keys, length_comparator);
-        heppat = Pattern.compile(String.join("|", heppat_keys));
+        heppat = Pattern.compile(joinString("|", heppat_keys));
     }
     
     public static String normalize_double_n(final String a_string) {
