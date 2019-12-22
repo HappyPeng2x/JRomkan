@@ -1,6 +1,8 @@
 # JRomkan
 
-JRomkan is a Java port of [python-romkan](https://github.com/soimort/python-romkan) from Mort Yao, itself the Pythonic port of [Ruby/Romkan](http://0xcc.net/ruby-romkan/index.html.en), originally authored by Satoru Takabayashi and [originally ported](http://lilyx.net/python-romkan/) by Masato Hagiwara. 
+JRomkan is a Java library to convert Romaji to Hiragana, Katakana and vice-versa.
+
+It is a port of [python-romkan](https://github.com/soimort/python-romkan) from Mort Yao, itself the Pythonic port of [Ruby/Romkan](http://0xcc.net/ruby-romkan/index.html.en), originally authored by Satoru Takabayashi and [originally ported](http://lilyx.net/python-romkan/) by Masato Hagiwara. 
 
 Its main destination will be to be used in [Sumatora Dictionary](https://github.com/HappyPeng2x/SumatoraDictionary), an offline free software Japanese dictionary for Android.
 
