@@ -1,9 +1,5 @@
 .vscode
-build
-CMakeFiles
-org/happypeng/sumatora/jromkan/RomkanData.java
-\#*\#
-*~
-CMakeCache.txt
-cmake_install.cmake
-Makefile
+.settings
+target
+.classpath
+.project
